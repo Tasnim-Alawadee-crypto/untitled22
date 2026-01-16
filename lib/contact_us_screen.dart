@@ -12,20 +12,45 @@ class ContactUsScreen extends StatelessWidget {
         child: Column(
           children: [
             TextField(
-              decoration: const InputDecoration(labelText: 'Name'),
+              decoration: InputDecoration(
+                labelText: 'Name',
+                prefixIcon: const Icon(Icons.person),
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(12),
+                ),
+              ),
             ),
+            const SizedBox(height: 15),
+
             TextField(
-              decoration: const InputDecoration(labelText: 'Email'),
+              decoration: InputDecoration(
+                labelText: 'Email',
+                prefixIcon: const Icon(Icons.email),
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(12),
+                ),
+              ),
             ),
+            const SizedBox(height: 15),
+
             TextField(
-              decoration: const InputDecoration(labelText: 'Message'),
+              decoration: InputDecoration(
+                labelText: 'Message',
+                prefixIcon: const Icon(Icons.message),
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(12),
+                ),
+              ),
             ),
-            const SizedBox(height: 20),
+            const SizedBox(height: 25),
+
             ElevatedButton(
               child: const Text('Send'),
               onPressed: () {
                 ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(content: Text('Message Sent')),
+                  const SnackBar(
+                    content: Text('Message Sent'),
+                  ),
                 );
               },
             ),

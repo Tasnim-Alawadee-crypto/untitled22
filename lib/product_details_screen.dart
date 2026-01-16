@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'contact_us_screen.dart';
 
 class ProductDetailsScreen extends StatelessWidget {
   final Map product;
@@ -14,11 +15,14 @@ class ProductDetailsScreen extends StatelessWidget {
           children: [
             Image.network(product['thumbnail'], height: 200),
             const SizedBox(height: 10),
+
             Text('Price: \$${product['price']}'),
             Text('Discount: ${product['discountPercentage']}%'),
             Text('Rating: ${product['rating']}'),
+
             const SizedBox(height: 10),
             Text(product['description']),
+
             const SizedBox(height: 20),
             SizedBox(
               height: 120,
@@ -32,7 +36,22 @@ class ProductDetailsScreen extends StatelessWidget {
                   );
                 },
               ),
-            )
+            ),
+
+            const SizedBox(height: 30),
+
+            // زر الانتقال إلى Contact Us
+            ElevatedButton(
+              child: const Text('Contact Us'),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (_) => const ContactUsScreen(),
+                  ),
+                );
+              },
+            ),
           ],
         ),
       ),
